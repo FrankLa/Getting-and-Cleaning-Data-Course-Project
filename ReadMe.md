@@ -1,6 +1,8 @@
-# Getting and Cleaning Data: Course Project
-***************************
-This repository contains work for the course project in Coursera: "Getting and Cleaning Data".
+# Getting and Cleaning Data: Course Project  
+#### Author: Frank La  
+#### Date: Mar 11, 2016  
+***************************  
+This repository contains my work for the course project in Coursera: "Getting and Cleaning Data".
 
 
 
@@ -9,7 +11,7 @@ This repository contains work for the course project in Coursera: "Getting and C
 In this project, a raw data set is available from  
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Students are to obtain and clean it in order to create a new, tidy data set.
+I will then retrieve and clean it in order to create a new, tidy data set.
 
 
 

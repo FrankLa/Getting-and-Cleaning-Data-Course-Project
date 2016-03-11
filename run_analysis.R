@@ -1,10 +1,8 @@
 ##  run_analysis.R 
-##  Author: FrankLa
-##  Date: Mar 06, 2016
+##  Author: Frank La
+##  Last modified: Mar 11, 2016
 
 ## 0. Assuming data already downloaded, proceed to read!  ---------------------------
-
-setwd("C:/Users/User/Desktop/Coursera/Coursera - Getting & Cleaning Data/RDir/Project")
 
 features <- read.table("./UCI HAR Dataset/features.txt")
 activity <- read.table("./UCI HAR Dataset/activity_labels.txt")
@@ -15,7 +13,7 @@ features <- as.vector(features)
 
 activity <- activity[,2]
 activity <- as.vector(activity)
-activity[6] <- "LYING" # correct original naming mistake
+activity[6] <- "LYING" # correct original labeling mistake!
 
 
 ## 1. Merge training and test sets into one.  --------------------------------------

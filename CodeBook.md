@@ -10,13 +10,13 @@ The data are divided into a training set and a test set.
 
 * The "X" files (`X_train.txt, X_test.txt`) contain the data samples. In total, each sample has 561 features.
     + The entire list of features is contained in `features.txt`
-    + The meaning of each feature can be found in `features_info.txt`
+    + The definition of each feature can be found in `features_info.txt`
 
 * The "y" files (`y_train.txt, y_test.txt`) contain the labels for the data. 
-    + Each label 1,...,6 corresponds to an activity (e.g., walking, sitting, etc.). 
-    + `activity_labels.txt` gives the list of activities.
+    + Each label 1, ..., 6 corresponds to an activity (e.g., walking, sitting, etc.). 
+    + The file `activity_labels.txt` gives the list of activities.
 
-* In addition, the "subject" files (`subject_train.txt, subject_test.txt`) contain the IDs (1,...,30) of the person that performed an activity in each sample.
+* In addition, the "subject" files (`subject_train.txt, subject_test.txt`) contain the IDs (1, ..., 30) of the person that performed an activity in each sample.
 
 * The rest of the files are not needed for this exercise.
 
@@ -24,12 +24,12 @@ The data are divided into a training set and a test set.
 ## Procedures
 ***************************
 
-To clean this data set, `run_analysis.R` needs to do the following: 
--	Merges the training and the test sets to create one data set.
--	Extracts only the measurements on the mean and standard deviation for each measurement. 
--	Uses descriptive activity names to name the activities in the data set
--	Appropriately labels the data set with descriptive variable names. 
--	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+To clean this data set, `run_analysis.R` needs to do the following:  
+-	Merge the training and the test sets to create one data set.  
+-	Extract only the measurements on the mean and standard deviation for each measurement.  
+-	Use descriptive activity names to name the activities in the data set.  
+-	Appropriately label the data set with descriptive variable names.   
+-	From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.  
 
 
 #### 1. Merging
@@ -42,9 +42,9 @@ Also, the feature and activity labels are retrieved from `features.txt` and `act
 
 To extract the features of means and standard deviations, we select columns of `whole.data` whose names contain keywords such as `Mean`, `mean` and `std`. These selections result in 86 features being selected, including
 
-  - Features with `mean()` and `std()` which are straightforward measures of means and standard deviations.
-  - Features with `meanFreq()` which measure "mean frequencies"
-  - In addition, features of the types `angle(...Mean)` are also selected which average the signals in a signal window sample.
+  - Features with `mean()` and `std()` which are straightforward measures of mean and standard deviation.
+  - Features with `meanFreq()` which measure "mean frequency"
+  - In addition, features of the types `angle(...Mean)` are also selected as they average the signals in a signal window sample.
 
 
 #### 3. Renaming activities
@@ -54,7 +54,7 @@ In the activity variable, the numeric values are replaced by their actual names.
 
 #### 4. Renaming labels
 
-The features are renamed to enhance clarity through a series of operations, including typo correction, special character removal, substituting mathematical variables (`t`, `f`) for their names, etc. 
+The features are renamed through a series of operations, including typo correction, special character removal, substitution of mathematical variables (`t`, `f`) for their names, etc. 
 
 
 #### 5. Creating a new tidy data set
@@ -74,13 +74,13 @@ The variables are:
 
 #### 1. Subject: 
    - IDs of person who performed an activity that was measured.
-   - Integer 1, ..., 30
+   - Integer 1, ..., 30.
 
 #### 2. Activity:
-   - Characters of the following 6 values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LYING"
+   - Characters of the following 6 values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LYING".
 
 #### 3. The measurement averages (3rd column to end):
-   - Floating point numbers, normalized in [-1,1]
+   - Floating point numbers, normalized in [-1,1].
    - Naming format: `avg[x]` where `x` is the original feature name after filtering and naming, e.g., "timeBodyAcc-Mean-X", "timeBodyAcc-Mean-Y", "timeBodyAcc-Mean-Z", and so on. The name signifies that their values are obtained by averaging over the original variables.
    - For a complete list, see `ListofFeatures.md`.
 
